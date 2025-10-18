@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal"
+    android:gravity="center_vertical"
+    android:paddingStart="8dp"
+    android:paddingEnd="16dp">
+
+    <!-- Logo a la izquierda -->
+    <ImageView
+        android:id="@+id/actionbar_logo"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:src="@drawable/logo"
+        android:contentDescription="@string/logo_desc"
+        android:scaleType="fitCenter"
+        android:adjustViewBounds="true" />
+
+    <!-- Espacio entre el logo y el título -->
+    <View
+        android:layout_width="0dp"
+        android:layout_height="1dp"
+        android:layout_weight="1" />
+
+    <!-- Título a la derecha -->
+    <TextView
+        android:id="@+id/actionbar_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/app_name"
+        android:textColor="@color/blue_primary"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:gravity="end|center_vertical" />
+
+</LinearLayout>
+

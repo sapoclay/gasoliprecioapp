@@ -1,0 +1,3 @@
+ARCHIVO ELIMINADO - Este archivo temporal ya no es necesario.
+El archivo correcto es themes.xml
+

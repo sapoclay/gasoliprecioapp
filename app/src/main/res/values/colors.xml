@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Material3 Light Theme Colors -->
+    <color name="primary">#1565C0</color>
+    <color name="onPrimary">#FFFFFF</color>
+    <color name="primaryContainer">#E3F2FD</color>
+    <color name="onPrimaryContainer">#0D47A1</color>
+
+    <color name="secondary">#0288D1</color>
+    <color name="onSecondary">#FFFFFF</color>
+    <color name="secondaryContainer">#B3E5FC</color>
+    <color name="onSecondaryContainer">#01579B</color>
+
+    <color name="background">#FFFFFF</color>
+    <color name="onBackground">#1C1B1F</color>
+
+    <color name="surface">#FFFFFF</color>
+    <color name="onSurface">#1C1B1F</color>
+    <color name="surfaceVariant">#E3F2FD</color>
+    <color name="onSurfaceVariant">#49454F</color>
+
+    <color name="error">#B3261E</color>
+    <color name="onError">#FFFFFF</color>
+    <color name="errorContainer">#F9DEDC</color>
+    <color name="onErrorContainer">#410E0B</color>
+
+    <color name="outline">#79747E</color>
+
+    <!-- Legacy colors -->
+    <color name="light_blue">#E3F2FD</color>
+    <color name="dark_blue">#1565C0</color>
+    <color name="blue_primary">#1565C0</color>
+</resources>

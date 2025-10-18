@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Gasoliprecio</string>
+    <string name="logo_desc">Logo de Gasoliprecio</string>
+    <string name="app_version">Versión 1.0</string>
+    <string name="app_description">Gasoliprecio es una aplicación que te permite consultar los precios actualizados de combustibles en las estaciones de servicio de España.  Puedes buscar por provincia, localidad, nombre o dirección, y guardar tus estaciones favoritas para acceder a ellas rápidamente.  TODOS los datos se obtienen del Ministerio para la Transición Ecológica y el Reto Demográfico del Gobierno de España.</string>
+    <string name="btn_github">🔗 Ver en GitHub</string>
+    <string name="developed_with_love">Desarrollado con ☕ por entreunosyceros.net️</string>
+</resources>

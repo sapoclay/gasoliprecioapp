@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Material3 Dark Theme Colors -->
+    <color name="primary">#90CAF9</color>
+    <color name="onPrimary">#003258</color>
+    <color name="primaryContainer">#004A77</color>
+    <color name="onPrimaryContainer">#CFE5FF</color>
+
+    <color name="secondary">#81D4FA</color>
+    <color name="onSecondary">#00344F</color>
+    <color name="secondaryContainer">#004D70</color>
+    <color name="onSecondaryContainer">#BCE9FF</color>
+
+    <color name="background">#1C1B1F</color>
+    <color name="onBackground">#E6E1E5</color>
+
+    <color name="surface">#1C1B1F</color>
+    <color name="onSurface">#E6E1E5</color>
+    <color name="surfaceVariant">#49454F</color>
+    <color name="onSurfaceVariant">#CAC4D0</color>
+
+    <color name="error">#F2B8B5</color>
+    <color name="onError">#601410</color>
+    <color name="errorContainer">#8C1D18</color>
+    <color name="onErrorContainer">#F9DEDC</color>
+
+    <color name="outline">#938F99</color>
+
+    <!-- Legacy colors for dark mode -->
+    <color name="light_blue">#1E2A3A</color>
+    <color name="dark_blue">#90CAF9</color>
+    <color name="blue_primary">#90CAF9</color>
+</resources>

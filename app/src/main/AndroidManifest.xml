@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <!-- Permitimos acceso a Internet para descargar los datos -->
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <application
+        android:name=".GasolinaApplication"
+        android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@drawable/logo"
+        android:label="@string/app_name"
+        android:roundIcon="@drawable/logo"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.Gasolina">
+
+        <!-- SplashActivity: actividad de entrada -->
+        <activity
+            android:name=".SplashActivity"
+            android:exported="true"
+            android:theme="@style/Theme.Gasolina"> <!-- puedes usar un tema sin ActionBar si prefieres -->
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <!-- MainActivity: muestra la lista de estaciones y el buscador -->
+        <activity android:name=".MainActivity" android:exported="true" />
+
+        <!-- FavoritesActivity: muestra las estaciones favoritas -->
+        <activity
+            android:name=".FavoritesActivity"
+            android:exported="false"
+            android:parentActivityName=".MainActivity" />
+
+        <!-- AboutActivity: muestra información sobre la app -->
+        <activity
+            android:name=".AboutActivity"
+            android:exported="false"
+            android:parentActivityName=".MainActivity" />
+
+        <!-- SettingsActivity: configuración de la aplicación -->
+        <activity
+            android:name=".SettingsActivity"
+            android:exported="false"
+            android:parentActivityName=".MainActivity"
+            android:label="Configuración" />
+
+    </application>
+
+</manifest>
