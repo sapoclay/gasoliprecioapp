@@ -17,6 +17,9 @@
 ## ✨ Características principales
 
 ### 📍 Listado organizado por provincias
+
+<img width="341" height="673" alt="listado-gasoliprecio" src="https://github.com/user-attachments/assets/e7e4bc60-daa9-468d-8a7f-f66bb3c4b183" />
+
 - Gasolineras **agrupadas por provincias** con desplegables expandibles/colapsables
 - Por defecto, todas las provincias están **colapsadas** para una vista general
 - Haz clic en cualquier provincia para ver sus estaciones
@@ -25,6 +28,9 @@
 - Provincias ordenadas alfabéticamente
 
 ### 🔍 Buscador avanzado
+
+<img width="344" height="640" alt="busqueda-estaciones" src="https://github.com/user-attachments/assets/d1a14aef-da94-4ac6-97f9-a5d349d8314a" />
+
 - Búsqueda en **tiempo real** mientras escribes
 - **Busca por múltiples criterios**:
   - Comunidad Autónoma (ej: "Andalucía", "Madrid")
@@ -38,6 +44,9 @@
 - Placeholder: "Buscar gasolinera"
 
 ### ⭐ Sistema de favoritos
+
+<img width="343" height="619" alt="favoritos-gasoliprecioapp" src="https://github.com/user-attachments/assets/3dac8e8e-15e0-479c-96ce-4b8d19a4b02e" />
+
 - **Botón de favoritos** en la pantalla principal
 - Marca/desmarca favoritos con la **estrella (⭐/☆)** de cada estación
 - Favoritos **guardados permanentemente** (SharedPreferences)
@@ -49,6 +58,9 @@
 - Los favoritos se sincronizan en todas las pantallas
 
 ### 📊 Detalles completos de estaciones
+
+<img width="342" height="689" alt="precios-gasolinera" src="https://github.com/user-attachments/assets/58ad34a8-9546-47b3-a715-4772e4ca5bca" />
+
 Al hacer clic en cualquier gasolinera se muestra:
 - Nombre completo
 - Localidad y provincia
