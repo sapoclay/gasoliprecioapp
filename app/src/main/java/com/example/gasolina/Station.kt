@@ -14,8 +14,8 @@ data class Station(
     val longitude: Double? = null  // Longitud de la estación
 ) : Serializable
 
-// Para manejar headers de provincia con estado de expansión y estaciones en el RecyclerView
+// Para manejar headers de comunidad autónoma con estado de expansión y estaciones en el RecyclerView
 sealed class ListItem {
-    data class Header(val province: String, var isExpanded: Boolean = false, val stationCount: Int = 0) : ListItem()
+    data class Header(val communityName: String, var isExpanded: Boolean = false, val stationCount: Int = 0) : ListItem()
     data class StationItem(val station: Station) : ListItem()
 }

@@ -12,7 +12,7 @@ class FavoritesAdapter(
     private val onDeleteClick: (Station) -> Unit
 ) : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
-    private var allStationsByProvince = mutableMapOf<String, List<ListItem.StationItem>>()
+    private var allStationsByCommunity = mutableMapOf<String, List<ListItem.StationItem>>()
 
     companion object {
         private const val TYPE_HEADER = 0
@@ -57,12 +57,12 @@ class FavoritesAdapter(
         when (val item = items[position]) {
             is ListItem.Header -> {
                 val vh = holder as HeaderVH
-                vh.tvProvince.text = item.province
+                vh.tvProvince.text = item.communityName
                 vh.tvCount.text = "(${item.stationCount} favoritas)"
                 vh.tvExpandIcon.text = if (item.isExpanded) "▼" else "▶"
 
                 vh.itemView.setOnClickListener {
-                    toggleProvince(position, item)
+                    toggleCommunity(position, item)
                 }
             }
             is ListItem.StationItem -> {
@@ -95,12 +95,12 @@ class FavoritesAdapter(
 
     override fun getItemCount(): Int = items.size
 
-    private fun toggleProvince(position: Int, header: ListItem.Header) {
+    private fun toggleCommunity(position: Int, header: ListItem.Header) {
         header.isExpanded = !header.isExpanded
 
         if (header.isExpanded) {
             // Expandir: insertar estaciones después del header
-            val stationsToAdd = allStationsByProvince[header.province] ?: emptyList()
+            val stationsToAdd = allStationsByCommunity[header.communityName] ?: emptyList()
             items.addAll(position + 1, stationsToAdd)
             notifyItemChanged(position)
             notifyItemRangeInserted(position + 1, stationsToAdd.size)
@@ -121,20 +121,20 @@ class FavoritesAdapter(
     }
 
     fun setStations(stations: List<Station>) {
-        // Agrupar por provincia
-        val grouped = stations.groupBy { it.province ?: "Sin provincia" }
+        // Agrupar por comunidad autónoma
+        val grouped = stations.groupBy { it.autonomousCommunity ?: "Sin comunidad" }
 
-        // Guardar todas las estaciones por provincia
-        allStationsByProvince.clear()
-        grouped.forEach { (province, stationList) ->
-            allStationsByProvince[province] = stationList.map { ListItem.StationItem(it) }
+        // Guardar todas las estaciones por comunidad autónoma
+        allStationsByCommunity.clear()
+        grouped.forEach { (community, stationList) ->
+            allStationsByCommunity[community] = stationList.map { ListItem.StationItem(it) }
         }
 
         // Crear lista solo con headers (todos colapsados por defecto)
         val newItems = mutableListOf<ListItem>()
-        for ((province, stationList) in grouped.entries.sortedBy { it.key }) {
+        for ((community, stationList) in grouped.entries.sortedBy { it.key }) {
             newItems.add(ListItem.Header(
-                province = province,
+                communityName = community,
                 isExpanded = false,
                 stationCount = stationList.size
             ))

@@ -14,7 +14,7 @@ class StationsAdapter(
 ) : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
     private var originalItems: List<ListItem> = items.toList()
-    private val allStationsByProvince = mutableMapOf<String, List<ListItem.StationItem>>()
+    private val allStationsByCommunity = mutableMapOf<String, List<ListItem.StationItem>>()
 
     companion object {
         private const val TYPE_HEADER = 0
@@ -58,12 +58,12 @@ class StationsAdapter(
         when (val item = items[position]) {
             is ListItem.Header -> {
                 val vh = holder as HeaderVH
-                vh.tvProvince.text = item.province
+                vh.tvProvince.text = item.communityName
                 vh.tvCount.text = "(${item.stationCount} estaciones)"
                 vh.tvExpandIcon.text = if (item.isExpanded) "▼" else "▶"
 
                 vh.itemView.setOnClickListener {
-                    toggleProvince(position, item)
+                    toggleCommunity(position, item)
                 }
             }
             is ListItem.StationItem -> {
@@ -94,12 +94,12 @@ class StationsAdapter(
 
     override fun getItemCount(): Int = items.size
 
-    private fun toggleProvince(position: Int, header: ListItem.Header) {
+    private fun toggleCommunity(position: Int, header: ListItem.Header) {
         header.isExpanded = !header.isExpanded
 
         if (header.isExpanded) {
             // Expandir: insertar estaciones después del header
-            val stationsToAdd = allStationsByProvince[header.province] ?: emptyList()
+            val stationsToAdd = allStationsByCommunity[header.communityName] ?: emptyList()
             items.addAll(position + 1, stationsToAdd)
             notifyItemChanged(position) // Actualizar icono
             notifyItemRangeInserted(position + 1, stationsToAdd.size)
@@ -120,20 +120,20 @@ class StationsAdapter(
     }
 
     fun setStations(stations: List<Station>) {
-        // Agrupar por provincia
-        val grouped = stations.groupBy { it.province ?: "Sin provincia" }
+        // Agrupar por comunidad autónoma
+        val grouped = stations.groupBy { it.autonomousCommunity ?: "Sin comunidad" }
 
-        // Guardar todas las estaciones por provincia
-        allStationsByProvince.clear()
-        grouped.forEach { (province, stationList) ->
-            allStationsByProvince[province] = stationList.map { ListItem.StationItem(it) }
+        // Guardar todas las estaciones por comunidad autónoma
+        allStationsByCommunity.clear()
+        grouped.forEach { (community, stationList) ->
+            allStationsByCommunity[community] = stationList.map { ListItem.StationItem(it) }
         }
 
         // Crear lista solo con headers (todos colapsados por defecto)
         val newItems = mutableListOf<ListItem>()
-        for ((province, stationList) in grouped.entries.sortedBy { it.key }) {
+        for ((community, stationList) in grouped.entries.sortedBy { it.key }) {
             newItems.add(ListItem.Header(
-                province = province,
+                communityName = community,
                 isExpanded = false,
                 stationCount = stationList.size
             ))
@@ -156,7 +156,7 @@ class StationsAdapter(
         val filtered = mutableListOf<ListItem>()
 
         // Filtrar estaciones por todas las categorías
-        val allStations = allStationsByProvince.values.flatten()
+        val allStations = allStationsByCommunity.values.flatten()
         val filteredStations = allStations.filter { item ->
             val s = item.station
             val name = s.name?.lowercase() ?: ""
@@ -173,10 +173,10 @@ class StationsAdapter(
         }
 
         // Reagrupar con headers expandidos automáticamente al buscar
-        val grouped = filteredStations.groupBy { it.station.province ?: "Sin provincia" }
-        for ((province, stationList) in grouped.entries.sortedBy { it.key }) {
+        val grouped = filteredStations.groupBy { it.station.autonomousCommunity ?: "Sin comunidad" }
+        for ((community, stationList) in grouped.entries.sortedBy { it.key }) {
             filtered.add(ListItem.Header(
-                province = province,
+                communityName = community,
                 isExpanded = true,
                 stationCount = stationList.size
             ))

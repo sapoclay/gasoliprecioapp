@@ -286,8 +286,8 @@ class MainActivity : AppCompatActivity() {
                     ))
                 }
 
-                // Ordenar por provincia y luego por localidad
-                list.sortWith(compareBy({ it.province ?: "" }, { it.locality ?: "" }, { it.name ?: "" }))
+                // Ordenar por comunidad autónoma, luego por provincia y luego por localidad
+                list.sortWith(compareBy({ it.autonomousCommunity ?: "" }, { it.province ?: "" }, { it.locality ?: "" }, { it.name ?: "" }))
                 return@withContext list
             } finally {
                 conn.disconnect()
