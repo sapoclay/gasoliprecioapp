@@ -1,4 +1,4 @@
-# Gasoliprecio - Precios de Carburantes en España 🇪🇸
+# Gasoliprecio App - Precios de Carburantes en España 🇪🇸
 
 <div align="center">
 
@@ -6,19 +6,17 @@
 
 **Aplicación Android para consultar precios actualizados de combustibles en España**
 
-[Repositorio GitHub](https://github.com/sapoclay/gasoliprecioapp)
-
 </div>
 
 ---
 
 ## 📱 Descripción
 
-**Gasoliprecio** es una aplicación Android que permite consultar en tiempo real los precios de combustibles en todas las estaciones de servicio de España. Los datos se obtienen directamente de la API oficial del **Ministerio para la Transición Ecológica y el Reto Demográfico**.
+**Gasoliprecio** es una aplicación Android que permite consultar en tiempo real los precios de combustibles en todas las estaciones de servicio de España. Los datos se obtienen directamente de la API oficial del **Ministerio para la Transición Ecológica y el Reto Demográfico**. Por eso los precios son los que proporciona el ministerio.
 
-## ✨ Características Principales
+## ✨ Características principales
 
-### 📍 Listado Organizado por Provincias
+### 📍 Listado organizado por provincias
 - Gasolineras **agrupadas por provincias** con desplegables expandibles/colapsables
 - Por defecto, todas las provincias están **colapsadas** para una vista general
 - Haz clic en cualquier provincia para ver sus estaciones
@@ -26,7 +24,7 @@
 - Icono visual (▶/▼) indica el estado del desplegable
 - Provincias ordenadas alfabéticamente
 
-### 🔍 Buscador Avanzado
+### 🔍 Buscador avanzado
 - Búsqueda en **tiempo real** mientras escribes
 - **Busca por múltiples criterios**:
   - Comunidad Autónoma (ej: "Andalucía", "Madrid")
@@ -39,8 +37,8 @@
 - Las provincias con resultados **se expanden automáticamente**
 - Placeholder: "Buscar gasolinera"
 
-### ⭐ Sistema de Favoritos
-- **Botón de Favoritos** en la pantalla principal
+### ⭐ Sistema de favoritos
+- **Botón de favoritos** en la pantalla principal
 - Marca/desmarca favoritos con la **estrella (⭐/☆)** de cada estación
 - Favoritos **guardados permanentemente** (SharedPreferences)
 - **Pantalla dedicada** para ver solo tus favoritas
@@ -50,7 +48,7 @@
   - Diálogo de confirmación antes de eliminar
 - Los favoritos se sincronizan en todas las pantallas
 
-### 📊 Detalles Completos de Estaciones
+### 📊 Detalles completos de estaciones
 Al hacer clic en cualquier gasolinera se muestra:
 - Nombre completo
 - Localidad y provincia
@@ -58,7 +56,7 @@ Al hacer clic en cualquier gasolinera se muestra:
 - **Dirección física** (clic para abrir en Google Maps)
 - **Lista completa de productos y precios disponibles**
 
-#### 🛢️ Productos Soportados:
+#### 🛢️ Productos soportados:
 
 **Gasolinas:**
 - Gasolina 95 E5
@@ -104,7 +102,7 @@ Al hacer clic en cualquier gasolinera se muestra:
 - **Splash screen** al iniciar la aplicación (3.5 segundos)
 - Interfaz intuitiva y moderna
 
-## 🛠️ Tecnologías Utilizadas
+## 🛠️ Tecnologías utilizadas
 
 - **Kotlin** - Lenguaje de programación principal
 - **Android SDK** - Framework de desarrollo
@@ -116,7 +114,7 @@ Al hacer clic en cualquier gasolinera se muestra:
 - **Material Components** - Diseño moderno
 - **Google Maps** - Integración para navegación
 
-## 📡 Fuente de Datos
+## 📡 Fuente de datos
 
 Los datos se obtienen en tiempo real de:
 - **API Oficial**: Ministerio para la Transición Ecológica y el Reto Demográfico
@@ -193,19 +191,6 @@ Las contribuciones son bienvenidas. Por favor:
 4. Push a la rama (`git push origin feature/AmazingFeature`)
 5. Abre un Pull Request
 
-## 📋 Roadmap / Futuras Mejoras
-
-- [ ] Geocodificación real de direcciones para el mapa
-- [ ] Filtros avanzados (por tipo de combustible, rango de precio)
-- [ ] Ordenación por precio (más barato primero)
-- [ ] Cálculo de ruta y distancia desde ubicación actual
-- [ ] Modo offline con caché local
-- [ ] Notificaciones de bajada de precio
-- [ ] Widget para pantalla de inicio
-- [ ] Gráficas de evolución de precios
-- [ ] Compartir gasolineras con amigos
-- [ ] Temas claro/oscuro
-
 ## 📄 Licencia
 
 Este proyecto es de código abierto y está disponible para uso educativo y personal.
@@ -224,7 +209,6 @@ Este proyecto es de código abierto y está disponible para uso educativo y pers
 ---
 
 <div align="center">
-
-**Desarrollado con ❤️ en Kotlin**
+**Desarrollado con ☕ en Kotlin por entreunosyceros.net**
 
 </div>
